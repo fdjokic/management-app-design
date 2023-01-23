@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { ThemeProvider } from "styled-components";
+import { Card } from "./components/Card/Card";
+import { darkTheme, lightTheme } from "./styles/GlobalStyles";
+import { Kanban } from "./pages/Kanban";
 
 function App() {
+  const [themeColor, setThemeColor] = useState(
+    "light" ? lightTheme : darkTheme
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={themeColor}>
+      <Kanban />
+    </ThemeProvider>
   );
 }
 
