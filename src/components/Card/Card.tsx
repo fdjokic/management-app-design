@@ -3,7 +3,7 @@ import { CardStyled } from "./CardStyle";
 import { StatusBar } from "./StatusBar";
 
 interface ICard {
-  height: string;
+  height?: string;
   text: string;
   numOfComments?: number;
   numOfFilters?: number;
@@ -20,14 +20,14 @@ export const Card = ({
   statusColors,
 }: ICard) => {
   return (
-    <CardStyled height={height}>
+    <CardStyled>
       <p>{text}</p>
       <StatusBar
         colors={statusColors}
         comments={numOfComments}
         filters={numOfFilters}
       />
-      <b>{dates}</b>
+      {dates && <b>{dates}</b>}
     </CardStyled>
   );
 };

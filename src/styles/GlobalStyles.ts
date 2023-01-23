@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const lightTheme = {
-    background:'#D8D8D8',
+    background:'#F4F5F7',
     pureWhite:'#FFFFFF',
     statusPurple:'#B06AD1',
     statusBlue:'#4B9AE5',
@@ -51,7 +51,7 @@ interface FlexProps {
     minHeight?: string
     top?: string
     height?: string
-    overflow?: boolean
+    overflow?: string
     onClick?: () => any
     mediaQ?: boolean
   }
@@ -78,6 +78,6 @@ export const Flex = styled.div<FlexProps>`
   ${(props) => props.maxHeight && 'max-height:' + props.maxHeight};
   ${(props) => props.minHeight && 'min-height:' + props.minHeight};
   ${(props) => props.height && 'height:' + props.height};
-  ${(props) => props.overflow && 'overflow-x:hidden'};
+  ${(props) => props.overflow && 'auto'};
   ${(props) => props.padding && 'padding:' + props.padding};
 `

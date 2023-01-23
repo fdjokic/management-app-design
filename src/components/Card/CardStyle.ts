@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 interface ICard {
-    height:string
+    height?:string
 }
 export const CardStyled = styled.div<ICard>`
 max-width: 260px;
+min-height: 60px;
 display: flex;
 flex-direction: column;
-justify-content: space-around;
 
 b{
   height: 24px;
