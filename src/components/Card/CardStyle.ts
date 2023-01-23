@@ -8,6 +8,8 @@ max-width: 260px;
 min-height: 60px;
 display: flex;
 flex-direction: column;
+justify-content: space-around;
+
 
 b{
   height: 24px;
@@ -21,7 +23,7 @@ b{
 p{
     max-width: 236px;
     word-break: break-all;
-padding: 0 12px 0 12px;
+padding: 0 12px ;
   font-family: "SF Pro Display";
   font-size: 14px;
   letter-spacing: 0.3px;
