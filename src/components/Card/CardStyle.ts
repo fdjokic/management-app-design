@@ -5,12 +5,11 @@ interface ICard {
 }
 export const CardStyled = styled.div<ICard>`
 max-width: 260px;
-min-height: 60px;
 display: flex;
+min-height: 60px;
 flex-direction: column;
 justify-content: space-between;
-height: ${(props)=>props.height };
-
+max-height: 114px;
 
 b{
   height: 24px;

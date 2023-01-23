@@ -20,13 +20,15 @@ export const Card = ({
   statusColors,
 }: ICard) => {
   return (
-    <CardStyled height={height}>
+    <CardStyled>
       <p>{text}</p>
-      <StatusBar
-        colors={statusColors}
-        comments={numOfComments}
-        filters={numOfFilters}
-      />
+      {!statusColors || !numOfComments || !dates ? null : (
+        <StatusBar
+          colors={statusColors}
+          comments={numOfComments}
+          filters={numOfFilters}
+        />
+      )}
       {dates && <b>{dates}</b>}
     </CardStyled>
   );

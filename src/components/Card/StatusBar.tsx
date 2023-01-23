@@ -13,7 +13,7 @@ export const StatusBar = ({ colors, comments, filters }: IStatusBar) => {
   return (
     <div
       style={{
-        padding: "0 0 0 12px",
+        padding: "12px 12px",
         display: "flex",
         alignItems: "center",
         gap: "6px",

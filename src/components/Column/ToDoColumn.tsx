@@ -15,7 +15,6 @@ export const ToDoColumn = () => {
           {todoCards.map((item) => {
             return (
               <Card
-                height="114px"
                 statusColors={item.statusColors ? item.statusColors : []}
                 text={item.text}
                 dates={item.dates}
