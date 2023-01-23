@@ -8,7 +8,8 @@ max-width: 260px;
 min-height: 60px;
 display: flex;
 flex-direction: column;
-justify-content: space-around;
+justify-content: space-between;
+height: ${(props)=>props.height };
 
 
 b{
@@ -23,12 +24,11 @@ b{
 p{
     max-width: 236px;
     word-break: break-all;
-padding: 0 12px ;
+padding: 12px 12px 0 12px;
   font-family: "SF Pro Display";
   font-size: 14px;
   letter-spacing: 0.3px;
 }
-height: ${(props)=>props.height };
   border-radius: 6px;
   background-color: ${(props)=>props.theme.pureWhite};
   box-shadow: 0 2px 7px -2px rgba(0,0,0,0.2);

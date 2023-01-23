@@ -20,7 +20,7 @@ export const Card = ({
   statusColors,
 }: ICard) => {
   return (
-    <CardStyled>
+    <CardStyled height={height}>
       <p>{text}</p>
       <StatusBar
         colors={statusColors}
