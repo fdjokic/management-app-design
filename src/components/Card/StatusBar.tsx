@@ -1,5 +1,8 @@
 import React from "react";
+import { CommentIcon } from "../../assets/icons/comment";
+import { FilterIcon } from "../../assets/icons/filter";
 import { Flex } from "../../styles/GlobalStyles";
+import { Icon } from "../Icon/Icon";
 import { StatusBtn } from "./CardStyle";
 
 interface IStatusBar {
@@ -13,7 +16,6 @@ export const StatusBar = ({ colors, comments, filters }: IStatusBar) => {
   return (
     <div
       style={{
-        // margin: "12px 12px 0 12px",
         display: "flex",
         alignItems: "center",
         gap: "6px",
@@ -35,12 +37,25 @@ export const StatusBar = ({ colors, comments, filters }: IStatusBar) => {
         style={{
           display: "flex",
           alignItems: "center",
+          gap: "5px",
           color: "#8E8E8E",
           fontSize: "12px",
         }}
       >
-        {comments && <span>icon {comments}</span>}
-        {filters && <span>icon {filters}</span>}
+        {comments && (
+          <ul
+            style={{
+              margin: "0 10px",
+            }}
+          >
+            <Icon children={<CommentIcon />} num={comments} />
+          </ul>
+        )}
+        {filters && (
+          <ul>
+            <Icon children={<FilterIcon />} num={filters} />
+          </ul>
+        )}
       </div>
     </div>
   );
