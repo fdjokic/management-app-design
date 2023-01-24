@@ -6,6 +6,9 @@ interface ICard {
 
 }
 export const CardStyled = styled.div<ICard>`
+position: relative;
+overflow: hidden;
+
 max-width: 260px;
 display: flex;
 gap: 8px;

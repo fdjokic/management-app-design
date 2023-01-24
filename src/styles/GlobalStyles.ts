@@ -89,3 +89,14 @@ export const Flex = styled.div<FlexProps>`
   ${(props) => props.overflow && 'auto'};
   ${(props) => props.padding && 'padding:' + props.padding};
 `
+
+export const Divider = styled.div`
+
+background-color: #F31848ed;
+height: 100%;
+width: 6px;
+transform: translate(-50%,-50%);
+top: 50%;
+left: 0;
+position: absolute;
+`

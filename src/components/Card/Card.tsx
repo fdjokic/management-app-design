@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex } from "../../styles/GlobalStyles";
+import { Divider, Flex } from "../../styles/GlobalStyles";
 import { CardStyled } from "./CardStyle";
 import { StatusBar } from "./StatusBar";
 import Avatar from "../../assets/images/user.png";
@@ -13,6 +13,7 @@ export interface ICard {
   statusColors?: string[];
   isCompleted?: boolean;
   profileImgs?: any;
+  highPriority?: boolean;
 }
 
 export const Card = ({
@@ -24,10 +25,12 @@ export const Card = ({
   statusColors,
   isCompleted,
   profileImgs,
+  highPriority,
 }: ICard) => {
   console.log(profileImgs);
   return (
     <CardStyled isCompleted={isCompleted}>
+      {highPriority && <Divider />}
       <p>{text}</p>
       {!statusColors || !numOfComments || !dates ? null : (
         <StatusBar

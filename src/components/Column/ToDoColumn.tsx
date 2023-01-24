@@ -22,6 +22,7 @@ export const Column = ({ title, list }: { title: string; list: ICard[] }) => {
                 numOfComments={item.numOfComments}
                 numOfFilters={item.numOfFilters}
                 profileImgs={item.profileImgs}
+                highPriority={item.highPriority}
               />
             );
           })}

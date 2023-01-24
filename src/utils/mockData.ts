@@ -14,11 +14,15 @@ export const todoCards = [{
 
 {
     text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    profileImgs:[Avatar],
+
    
 },
 {
     text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     statusColors:['#4B9AE5','#F47075','#64CD7C','#FFC236','#B06AD1',],
+    profileImgs:[Avatar],
+
     numOfComments:7,
     numOfFilters:2,
     dates: 'May 8. - Sep 10.'
@@ -94,7 +98,8 @@ export const reviewCards = [
     {
         text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       
-        dates: 'May 8. - Sep 10.'
+        dates: 'May 8. - Sep 10.',
+        highPriority:true,
     },
     {
         text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -107,6 +112,7 @@ export const testingCards = [
         text:'Lorem Ipsum is simply dummy text of the.',
         statusColors:['#4B9AE5','#F47075','#64CD7C','#FFC236','#B06AD1',],
 
+        profileImgs:[Avatar],
     
     
         numOfComments:7,
@@ -119,13 +125,16 @@ export const completeCards = [
         isCompleted:true,
         text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       
-        dates: 'May 8. - Sep 10.'
+        dates: 'May 8. - Sep 10.',
+    profileImgs:[Avatar],
+
     },
     {
         isCompleted:true,
         text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       
     },
+
 ]
 
 export const columnList = [
