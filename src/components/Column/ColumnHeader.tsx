@@ -19,15 +19,15 @@ export const ColumnHeader = ({
 const HeaderStyle = styled.div`
   background-color: ${(props) => props.theme.background};
   height: 20px;
-  width: 236px;
+  width: 80%;
+  padding: 12px 12px;
   display: flex;
-  padding: 0 22px 12px 22px;
   align-items: center;
-  gap: 5px;
+  justify-self: start;
+  gap: 7px;
 
   h1 {
     height: 19px;
-    width: 46px;
     color: ${(props) => props.theme.headingColor};
     font-family: "Helvetica Neue";
     font-size: 16px;
@@ -38,5 +38,7 @@ const HeaderStyle = styled.div`
   span {
     color: #373737;
     opacity: 0.5;
+    font-family: "HelveticaNeue-Bold";
+    font-size: 14px;
   }
 `;

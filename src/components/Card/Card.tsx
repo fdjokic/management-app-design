@@ -2,7 +2,7 @@ import React from "react";
 import { CardStyled } from "./CardStyle";
 import { StatusBar } from "./StatusBar";
 
-interface ICard {
+export interface ICard {
   height?: string;
   text: string;
   numOfComments?: number;

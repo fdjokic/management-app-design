@@ -5,9 +5,11 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
-height: 568px;
+height: fit-content;
+max-height: 568px;
   width: 280px;
   overflow-y: auto;
+  
 
   // scroll styles
 

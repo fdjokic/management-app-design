@@ -2,14 +2,27 @@ import React from "react";
 import styled from "styled-components";
 
 export const AddTask = () => {
-  return <AddTaskStyle>+ Add a Task</AddTaskStyle>;
+  return (
+    <AddTaskStyle>
+      <span>+ Add a Task</span>
+    </AddTaskStyle>
+  );
 };
 
 const AddTaskStyle = styled.div`
   cursor: pointer;
-  padding: 12px 0 0 22px;
   color: ${(props) => props.theme.mainBtnColor};
   font-size: 14px;
-  font-family: Helvetica Neue Medium;
-  font-weight: 500;
+  font-family: HelveticaNeue-Medium;
+  z-index: 99;
+  position: sticky;
+  bottom: 0;
+  background-color: ${(props) => props.theme.background};
+  width: 100%;
+  height: 40px;
+
+  span {
+    line-height: 30px;
+    margin-left: 22px;
+  }
 `;

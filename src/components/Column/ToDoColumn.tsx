@@ -1,18 +1,17 @@
 import React from "react";
 import { Flex } from "../../styles/GlobalStyles";
-import { todoCards } from "../../utils/mockData";
 import { AddTask } from "../Button/AddTask";
-import { Card } from "../Card/Card";
+import { Card, ICard } from "../Card/Card";
 import { ColumnHeader } from "./ColumnHeader";
 import { ColumnWrapper } from "./ColumnStyled";
 
-export const ToDoColumn = () => {
+export const Column = ({ title, list }: { title: string; list: ICard[] }) => {
   return (
-    <>
-      <ColumnHeader title="To Do" numOfTasks={todoCards.length} />
+    <div>
+      <ColumnHeader title={title} numOfTasks={list.length} />
       <ColumnWrapper>
-        <Flex column gap="5px">
-          {todoCards.map((item) => {
+        <Flex column gap="5px" padding="5px" overflow="none">
+          {list.map((item) => {
             return (
               <Card
                 statusColors={item.statusColors ? item.statusColors : []}
@@ -24,8 +23,8 @@ export const ToDoColumn = () => {
             );
           })}
         </Flex>
+        <AddTask />
       </ColumnWrapper>
-      <AddTask />
-    </>
+    </div>
   );
 };
