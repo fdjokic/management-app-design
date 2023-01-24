@@ -5,7 +5,7 @@ import { darkTheme, lightTheme } from "./styles/GlobalStyles";
 import { Kanban } from "./pages/Kanban";
 
 function App() {
-  const [themeColor, setThemeColor] = useState<any>(
+  const [themeColor, setThemeColor] = useState<string>(
     localStorage.getItem("theme") || "dark"
   );
 
