@@ -1,11 +1,12 @@
 import React from "react";
 import { Flex } from "../../styles/GlobalStyles";
-import { AddTask } from "../Button/AddTask";
+import { BottomColBtn } from "../Button/BottomColBtn";
 import { Card, ICard } from "../Card/Card";
 import { ColumnHeader } from "./ColumnHeader";
 import { ColumnWrapper } from "./ColumnStyled";
 
 export const Column = ({ title, list }: { title: string; list: ICard[] }) => {
+  const isCompleted = title?.toLowerCase().includes("completed");
   return (
     <div>
       <ColumnHeader title={title} numOfTasks={list.length} />
@@ -14,6 +15,7 @@ export const Column = ({ title, list }: { title: string; list: ICard[] }) => {
           {list.map((item) => {
             return (
               <Card
+                isCompleted={isCompleted}
                 statusColors={item.statusColors ? item.statusColors : []}
                 text={item.text}
                 dates={item.dates}
@@ -23,7 +25,7 @@ export const Column = ({ title, list }: { title: string; list: ICard[] }) => {
             );
           })}
         </Flex>
-        <AddTask />
+        <BottomColBtn isCompleted={isCompleted} />
       </ColumnWrapper>
     </div>
   );

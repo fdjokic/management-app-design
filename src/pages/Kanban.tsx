@@ -8,15 +8,16 @@ import {
   reviewCards,
   testingCards,
   completeCards,
+  columnList,
 } from "../utils/mockData";
 
 export const Kanban = () => {
   return (
     <KanbanStlye>
-      <Column title="To Do" list={todoCards} />
-      <Column title="In Progress" list={inProgressCards} />
-      <Column title="Ready for review" list={reviewCards} />
-      <Column title="Testing" list={testingCards} />
+      {columnList.map((i) => {
+        return <Column title={i.title} list={i.list} />;
+      })}
+
       <AddColumn />
       <Column title="Completed Tasks" list={completeCards} />
     </KanbanStlye>

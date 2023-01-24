@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 interface ICard {
     height?:string
-  completed?:boolean
+  isCompleted?:boolean
 
 }
 export const CardStyled = styled.div<ICard>`
@@ -12,7 +12,7 @@ gap: 8px;
 flex-direction: column;
 justify-content: space-between;
 max-height: 114px;
-background-color: ${(props)=>props.theme.cardColor};
+background-color: ${(props)=>props.isCompleted ? props.theme.completedCard : props.theme.cardColor};
 padding: 12px 12px;
 
 
@@ -34,7 +34,6 @@ line-height: 18px;
   font-family: "SF Pro Display";
   font-size: 14px;
   letter-spacing: 0.3px;
-  background-color: ${(props)=>props.theme.cardColor};
 }
   border-radius: 6px;
   box-shadow: 0 2px 7px -2px rgba(0,0,0,0.2);

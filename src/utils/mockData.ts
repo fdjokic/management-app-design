@@ -122,3 +122,23 @@ export const completeCards = [
       
     },
 ]
+
+export const columnList = [
+    {
+title:'To Do',
+list:todoCards
+    },
+    {
+        title:'In Progress',
+        list:inProgressCards
+            },
+            {
+                title:'Ready for review',
+                list:reviewCards
+                    },
+                    {
+                        title:'Testing',
+                        list:testingCards
+                            },
+                          
+]

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-export const AddTask = () => {
+export const BottomColBtn = ({ isCompleted }: { isCompleted?: boolean }) => {
   return (
     <AddTaskStyle>
-      <span>+ Add a Task</span>
+      <span>{isCompleted ? "View Completed Task" : "+ Add a Task"}</span>
     </AddTaskStyle>
   );
 };

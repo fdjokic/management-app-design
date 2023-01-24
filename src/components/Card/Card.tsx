@@ -9,6 +9,7 @@ export interface ICard {
   numOfFilters?: number;
   dates?: string;
   statusColors?: string[];
+  isCompleted?: boolean;
 }
 
 export const Card = ({
@@ -18,9 +19,10 @@ export const Card = ({
   numOfFilters,
   dates,
   statusColors,
+  isCompleted,
 }: ICard) => {
   return (
-    <CardStyled>
+    <CardStyled isCompleted={isCompleted}>
       <p>{text}</p>
       {!statusColors || !numOfComments || !dates ? null : (
         <StatusBar
