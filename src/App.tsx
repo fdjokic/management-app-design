@@ -24,7 +24,7 @@ function App() {
   return (
     <ThemeProvider theme={themeColor === "light" ? lightTheme : darkTheme}>
       <Kanban />
-      <button onClick={handleTheme}>Change me Daddy</button>
+      <button onClick={handleTheme}>Change theme</button>
     </ThemeProvider>
   );
 }
