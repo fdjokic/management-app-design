@@ -16,7 +16,7 @@ background-color: ${(props)=>props.theme.cardColor};
 b{
   height: 24px;
   width: 236px;
-  margin: 0 12px 12px 12px;
+  margin: 12px 12px 12px 12px;
    font-family: "SF Pro Display";
   font-size: 13px;
   font-weight: bold;
