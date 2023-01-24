@@ -1,3 +1,4 @@
+import Avatar from '../assets/images/user.png'
 export const todoCards = [{
     text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     dates:'Jan 3.'
@@ -6,7 +7,9 @@ export const todoCards = [{
     text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     numOfComments:7,
     numOfFilters:2,
-    dates: 'May 8. - Sep 10.'
+    dates: 'May 8. - Sep 10.',
+    profileImgs:[Avatar]
+
 },
 
 {
@@ -57,8 +60,7 @@ export const inProgressCards = [
     {
         text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         statusColors:['#4B9AE5','#F47075'],
-    
-    
+        profileImgs:[Avatar,Avatar,Avatar],
         numOfComments:7,
         numOfFilters:2,
         dates: 'May 8. - Sep 10.'
@@ -66,6 +68,7 @@ export const inProgressCards = [
     {
         text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         statusColors:['#FFC236','#64CD7C'],
+        profileImgs:[Avatar],
     
     
         numOfComments:7,
@@ -74,6 +77,8 @@ export const inProgressCards = [
     },
     {
         text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        profileImgs:[Avatar],
+
        
     },
 ]

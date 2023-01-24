@@ -32,5 +32,4 @@ const KanbanStlye = styled.div`
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.primaryText};
   overflow-x: auto;
-  border: 2px solid red;
 `;

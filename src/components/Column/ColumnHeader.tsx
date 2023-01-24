@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { OptionsIcon } from "../../assets/icons/optionsIcon";
 
 export const ColumnHeader = ({
   title,
@@ -10,21 +11,31 @@ export const ColumnHeader = ({
 }) => {
   return (
     <HeaderStyle>
-      <h1>{title}</h1>
-      <span>({numOfTasks})</span>
+      <div>
+        <h1>{title}</h1>
+        <span>({numOfTasks})</span>
+      </div>
+      <div>
+        <OptionsIcon />
+      </div>
     </HeaderStyle>
   );
 };
 
 const HeaderStyle = styled.div`
-  background-color: inherit;
-  height: 20px;
-  width: 80%;
-  padding: 0px 12px 12px 12px;
   display: flex;
+  height: 32px;
   align-items: center;
-  justify-self: start;
-  gap: 7px;
+  justify-content: space-between;
+  width: 236px;
+  margin: 0 auto;
+  div {
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    gap: 7px;
+  }
 
   h1 {
     height: 19px;

@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const BottomColBtn = ({ isCompleted }: { isCompleted?: boolean }) => {
   return (
     <AddTaskStyle>
-      <span>{isCompleted ? "View Completed Task" : "+ Add a Task"}</span>
+      <span>{isCompleted ? "View Completed Tasks" : "+ Add a Task"}</span>
     </AddTaskStyle>
   );
 };

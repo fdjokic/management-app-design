@@ -1,6 +1,8 @@
 import React from "react";
+import { Flex } from "../../styles/GlobalStyles";
 import { CardStyled } from "./CardStyle";
 import { StatusBar } from "./StatusBar";
+import Avatar from "../../assets/images/user.png";
 
 export interface ICard {
   height?: string;
@@ -10,6 +12,7 @@ export interface ICard {
   dates?: string;
   statusColors?: string[];
   isCompleted?: boolean;
+  profileImgs?: any;
 }
 
 export const Card = ({
@@ -20,7 +23,9 @@ export const Card = ({
   dates,
   statusColors,
   isCompleted,
+  profileImgs,
 }: ICard) => {
+  console.log(profileImgs);
   return (
     <CardStyled isCompleted={isCompleted}>
       <p>{text}</p>
@@ -31,7 +36,34 @@ export const Card = ({
           filters={numOfFilters}
         />
       )}
-      {dates && <b>{dates}</b>}
+      {(profileImgs?.length > 0 || dates) && (
+        <section>
+          {dates && <b>{dates}</b>}
+          {profileImgs && (
+            <Flex relative width="100%">
+              {profileImgs?.map((i: string, index: number) => {
+                console.log(i);
+                return (
+                  <img
+                    src={i}
+                    alt=""
+                    style={{
+                      width: "24px",
+                      position: "absolute",
+                      right: "0",
+                      transform: `${
+                        dates
+                          ? `translate(${index * -55}%)`
+                          : `translateX(${index * 50}%)`
+                      }`,
+                    }}
+                  />
+                );
+              })}
+            </Flex>
+          )}
+        </section>
+      )}
     </CardStyled>
   );
 };

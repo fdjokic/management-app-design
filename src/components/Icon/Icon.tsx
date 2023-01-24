@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Icon = ({ children, num }: { children: any; num: number }) => {
+export const Icon = ({ children, num }: { children: any; num?: number }) => {
   return (
     <>
       <li>

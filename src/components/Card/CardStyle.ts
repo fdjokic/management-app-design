@@ -15,7 +15,10 @@ max-height: 114px;
 background-color: ${(props)=>props.isCompleted ? props.theme.completedCard : props.theme.cardColor};
 padding: 12px 12px;
 
-
+section{
+  height: 24px;
+  display: flex;
+}
 b{
   width: 236px;
   display: flex;
@@ -24,13 +27,12 @@ b{
   font-size: 13px;
   font-weight: bold;
   line-height: 15px;
-  height: 24px;
 }
 
 p{
 line-height: 18px;
     max-width: 236px;
-    word-break: break-all;
+ 
   font-family: "SF Pro Display";
   font-size: 14px;
   letter-spacing: 0.3px;

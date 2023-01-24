@@ -21,6 +21,7 @@ export const Column = ({ title, list }: { title: string; list: ICard[] }) => {
                 dates={item.dates}
                 numOfComments={item.numOfComments}
                 numOfFilters={item.numOfFilters}
+                profileImgs={item.profileImgs}
               />
             );
           })}
