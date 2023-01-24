@@ -109,3 +109,16 @@ export const testingCards = [
         dates: 'May 8. - Sep 10.'
     },
 ]
+export const completeCards = [
+    {
+        isCompleted:true,
+        text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      
+        dates: 'May 8. - Sep 10.'
+    },
+    {
+        isCompleted:true,
+        text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      
+    },
+]

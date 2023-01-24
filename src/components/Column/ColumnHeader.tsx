@@ -20,7 +20,7 @@ const HeaderStyle = styled.div`
   background-color: inherit;
   height: 20px;
   width: 80%;
-  padding: 12px 12px;
+  padding: 0px 12px 12px 12px;
   display: flex;
   align-items: center;
   justify-self: start;
@@ -36,7 +36,7 @@ const HeaderStyle = styled.div`
     line-height: 19px;
   }
   span {
-    color: #373737;
+    color: ${(props) => props.theme.secondaryText};
     opacity: 0.5;
     font-family: "HelveticaNeue-Bold";
     font-size: 14px;

@@ -10,9 +10,18 @@ function App() {
     "light" ? lightTheme : darkTheme
   );
 
+  const handleTheme = () => {
+    if (themeColor === lightTheme) {
+      setThemeColor(darkTheme);
+      return;
+    }
+    setThemeColor(lightTheme);
+  };
+
   return (
     <ThemeProvider theme={themeColor}>
       <Kanban />
+      <button onClick={handleTheme}>Change me Daddy</button>
     </ThemeProvider>
   );
 }

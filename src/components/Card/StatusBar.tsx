@@ -13,7 +13,7 @@ export const StatusBar = ({ colors, comments, filters }: IStatusBar) => {
   return (
     <div
       style={{
-        margin: "12px 12px 0 12px",
+        // margin: "12px 12px 0 12px",
         display: "flex",
         alignItems: "center",
         gap: "6px",

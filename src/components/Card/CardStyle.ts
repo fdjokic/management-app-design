@@ -2,30 +2,35 @@ import styled from 'styled-components'
 
 interface ICard {
     height?:string
+  completed?:boolean
+
 }
 export const CardStyled = styled.div<ICard>`
 max-width: 260px;
 display: flex;
-min-height: 60px;
+gap: 8px;
 flex-direction: column;
 justify-content: space-between;
 max-height: 114px;
 background-color: ${(props)=>props.theme.cardColor};
+padding: 12px 12px;
 
 
 b{
-  height: 24px;
   width: 236px;
-  margin: 12px 12px 12px 12px;
+  display: flex;
+  align-items: center;
    font-family: "SF Pro Display";
   font-size: 13px;
   font-weight: bold;
+  line-height: 15px;
+  height: 24px;
 }
 
 p{
+line-height: 18px;
     max-width: 236px;
     word-break: break-all;
-margin: 12px 12px 0 12px;
   font-family: "SF Pro Display";
   font-size: 14px;
   letter-spacing: 0.3px;

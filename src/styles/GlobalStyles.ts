@@ -12,9 +12,14 @@ export const lightTheme = {
     cardEffectRed:'#F31848',
     lightBlue:'#F31848',
     headingColor:'#373737',
+    completedCard:'#F3FFFC',
+   primaryText:'#373737',
+    secondaryText:'#373737'
 }
 export const darkTheme = {
-    background:'#373A45',
+
+    background:'#2C2E38',
+    cardColor:'#373A45',
     statusPurple:'#B06AD1',
     statusBlue:'#4B9AE5',
     statusGreen:'#B06AD1',
@@ -22,7 +27,10 @@ export const darkTheme = {
     statusYellow:'#FFC236',
     mainBtnColor:'#68FFC7',
     cardEffectRed:'#F31848',
-    lightBlue:'#F31848'
+    lightBlue:'#F31848',
+    completedCard:'#3A4A44',
+   primaryText:'#ffffff',
+    secondaryText:'#ffffff'
 }
 
 
