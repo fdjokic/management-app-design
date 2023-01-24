@@ -64,6 +64,10 @@ interface FlexProps {
     overflow?: string
     onClick?: () => any
     mediaQ?: boolean
+    fontFamily?:string
+    fontSize?:string
+    color?:string
+
   }
 
 export const Flex = styled.div<FlexProps>`
@@ -90,6 +94,9 @@ export const Flex = styled.div<FlexProps>`
   ${(props) => props.height && 'height:' + props.height};
   ${(props) => props.overflow && 'auto'};
   ${(props) => props.padding && 'padding:' + props.padding};
+  font-family:${(props)=>props.fontFamily};
+  font-size:${(props)=>props.fontSize};
+  color:${(props)=>props.color}
 `
 
 export const Divider = styled.div`

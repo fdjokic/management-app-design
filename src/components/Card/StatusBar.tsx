@@ -12,35 +12,13 @@ interface IStatusBar {
 }
 
 export const StatusBar = ({ colors, comments, filters }: IStatusBar) => {
-  console.log(colors);
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "6px",
-      }}
-    >
+    <Flex center gap="6px" fontFamily="SF Pro Display" fontSize="12px">
       {colors?.map((i) => (
         <StatusBtn background={i} />
       ))}
-      <span
-        style={{
-          color: "#8E8E8E",
-          fontSize: "12px",
-        }}
-      >
-        {colors?.length === 5 && "+3"}
-      </span>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "5px",
-          color: "#8E8E8E",
-          fontSize: "12px",
-        }}
-      >
+      <span style={{ color: "#8e8e8e" }}>{colors?.length === 5 && "+3"}</span>
+      <Flex center gap="5px" color="#8E8E8E" fontSize="12px">
         {comments && (
           <ul
             style={{
@@ -55,7 +33,7 @@ export const StatusBar = ({ colors, comments, filters }: IStatusBar) => {
             <Icon children={<FilterIcon />} num={filters} />
           </ul>
         )}
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 };
