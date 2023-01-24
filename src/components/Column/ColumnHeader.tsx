@@ -17,7 +17,7 @@ export const ColumnHeader = ({
 };
 
 const HeaderStyle = styled.div`
-  background-color: ${(props) => props.theme.background};
+  background-color: inherit;
   height: 20px;
   width: 80%;
   padding: 12px 12px;

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const lightTheme = {
     background:'#F4F5F7',
-    pureWhite:'#FFFFFF',
+    cardColor:'#FFFFFF',
     statusPurple:'#B06AD1',
     statusBlue:'#4B9AE5',
     statusGreen:'#B06AD1',

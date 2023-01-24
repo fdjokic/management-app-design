@@ -20,9 +20,9 @@ export const Kanban = () => {
 };
 
 const KanbanStlye = styled.div`
-  background-color: ${(props) => props.theme.background};
   height: fit-content;
   padding: 1rem;
   display: flex;
   width: fit-content;
+  background-color: ${(props) => props.theme.background};
 `;

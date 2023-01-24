@@ -17,6 +17,7 @@ export const StatusBar = ({ colors, comments, filters }: IStatusBar) => {
         display: "flex",
         alignItems: "center",
         gap: "6px",
+        background: "inherit",
       }}
     >
       {colors?.map((i) => (
