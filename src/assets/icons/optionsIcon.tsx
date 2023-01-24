@@ -9,6 +9,7 @@ export const OptionsIcon = () => {
         viewBox="0 0 20 20"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
+        cursor="pointer"
       >
         <g
           id="Zadatak-za-UI-i-FE-developera"

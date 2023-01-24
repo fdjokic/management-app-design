@@ -14,7 +14,8 @@ export const lightTheme = {
     headingColor:'#373737',
     completedCard:'#F3FFFC',
    primaryText:'#373737',
-    secondaryText:'#373737'
+    secondaryText:'#373737',
+    scrollColor:'#00000050'
 }
 export const darkTheme = {
 
@@ -30,7 +31,8 @@ export const darkTheme = {
     lightBlue:'#F31848',
     completedCard:'#3A4A44',
    primaryText:'#ffffff',
-    secondaryText:'#ffffff'
+    secondaryText:'#ffffff',
+    scrollColor:'#ffffff50'
 }
 
 
