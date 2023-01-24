@@ -27,7 +27,6 @@ export const Card = ({
   profileImgs,
   highPriority,
 }: ICard) => {
-  console.log(profileImgs);
   return (
     <CardStyled isCompleted={isCompleted}>
       {highPriority && <Divider />}
@@ -45,7 +44,6 @@ export const Card = ({
           {profileImgs && (
             <Flex relative width="100%">
               {profileImgs?.map((i: string, index: number) => {
-                console.log(i);
                 return (
                   <img
                     src={i}
