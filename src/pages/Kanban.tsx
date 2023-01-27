@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { AddColumn } from "../components/Button/AddColumn";
 import { ICard } from "../components/Card/Card";
-import { Column } from "../components/Column/ToDoColumn";
+import { Column } from "../components/Column/Column";
 import { columnList, completeCards } from "../utils/mockData";
 
 export const Kanban = () => {
