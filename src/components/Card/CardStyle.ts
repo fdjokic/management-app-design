@@ -4,12 +4,12 @@ interface ICard {
     height?:string
   isCompleted?:boolean
 
-
+  notDragged:boolean
 }
 export const CardStyled = styled.div<ICard>`
 position: relative;
 overflow: hidden;
-
+opacity: ${(props)=>props.notDragged ? 0.1 : 1};
 max-width: 260px;
 display: flex;
 gap: 8px;

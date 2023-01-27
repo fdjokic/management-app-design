@@ -14,6 +14,7 @@ export const Column = ({
   onDragEnd,
   onMouseDown,
   setDraggableItem,
+  draggableItem,
 }: {
   title: string;
   list: ICard[];
@@ -23,6 +24,7 @@ export const Column = ({
   onDragStart?: (item: ICard) => void;
   onMouseDown?: (e: any) => void;
   setDraggableItem?: (item: ICard) => void;
+  draggableItem?: ICard;
 }) => {
   const isCompleted = title?.toLowerCase().includes("completed");
 
@@ -38,6 +40,7 @@ export const Column = ({
           {list?.map((item: ICard) => {
             return (
               <Card
+                notDragged={!!draggableItem && draggableItem.id !== item.id}
                 key={item?.id}
                 onDragStart={onDragStart}
                 isCompleted={isCompleted}

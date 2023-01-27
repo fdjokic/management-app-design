@@ -18,6 +18,7 @@ export interface ICard {
   onDragStart?: (item: any) => any;
   onMouseDown?: (e: any) => void;
   setDraggableItem?: () => void;
+  notDragged?: boolean;
 }
 
 export const Card = ({
@@ -32,6 +33,7 @@ export const Card = ({
   highPriority,
   onMouseDown,
   onDragStart,
+  notDragged,
 }: ICard) => {
   return (
     <CardStyled
@@ -39,6 +41,7 @@ export const Card = ({
       draggable
       onDragEnd={onDragStart}
       onMouseDown={onMouseDown}
+      notDragged={!!notDragged}
     >
       {highPriority && <Divider />}
       <p>{text}</p>
