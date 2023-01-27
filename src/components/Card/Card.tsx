@@ -2,7 +2,6 @@ import React from "react";
 import { Divider, Flex } from "../../styles/GlobalStyles";
 import { CardStyled } from "./CardStyle";
 import { StatusBar } from "./StatusBar";
-import Avatar from "../../assets/images/user.png";
 
 export interface ICard {
   id?: number;
