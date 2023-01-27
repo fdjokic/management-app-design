@@ -3,7 +3,6 @@ import styled from 'styled-components'
 interface ICard {
     height?:string
   isCompleted?:boolean
-  onDragStart?: any
 
 
 }

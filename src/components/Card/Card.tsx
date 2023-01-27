@@ -16,6 +16,8 @@ export interface ICard {
   profileImgs?: any;
   highPriority?: boolean;
   onDragStart?: (item: any) => any;
+  onMouseDown?: (e: any) => void;
+  setDraggableItem?: () => void;
 }
 
 export const Card = ({
@@ -28,10 +30,16 @@ export const Card = ({
   isCompleted,
   profileImgs,
   highPriority,
+  onMouseDown,
   onDragStart,
 }: ICard) => {
   return (
-    <CardStyled isCompleted={isCompleted} draggable onDragEnd={onDragStart}>
+    <CardStyled
+      isCompleted={isCompleted}
+      draggable
+      onDragEnd={onDragStart}
+      onMouseDown={onMouseDown}
+    >
       {highPriority && <Divider />}
       <p>{text}</p>
       {!statusColors || !numOfComments || !dates ? null : (

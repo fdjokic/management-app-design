@@ -13,6 +13,7 @@ export const Column = ({
   onDragStart,
   onDragEnd,
   onMouseDown,
+  setDraggableItem,
 }: {
   title: string;
   list: ICard[];
@@ -20,12 +21,17 @@ export const Column = ({
   onDragEnd?: () => void;
   onDragOver?: () => void;
   onDragStart?: (item: ICard) => void;
-  onMouseDown?: () => void;
+  onMouseDown?: (e: any) => void;
+  setDraggableItem?: (item: ICard) => void;
 }) => {
   const isCompleted = title?.toLowerCase().includes("completed");
 
   return (
-    <div onDragOver={onDragOver} onClick={onMouseDown} onDrop={onDragEnd}>
+    <div
+      onDragOver={onDragOver}
+      onDragEnd={onDragEnd}
+      onMouseDown={onMouseDown}
+    >
       <ColumnHeader title={title} numOfTasks={list.length} />
       <ColumnWrapper>
         <Flex column gap="5px" padding="5px" overflow="none">
@@ -33,7 +39,7 @@ export const Column = ({
             return (
               <Card
                 key={item?.id}
-                onDragStart={() => onDragStart?.(item)}
+                onDragStart={onDragStart}
                 isCompleted={isCompleted}
                 statusColors={item?.statusColors ? item?.statusColors : []}
                 text={item?.text}
@@ -42,6 +48,9 @@ export const Column = ({
                 numOfFilters={item?.numOfFilters}
                 profileImgs={item?.profileImgs}
                 highPriority={item?.highPriority}
+                onMouseDown={() => {
+                  setDraggableItem?.(item);
+                }}
               />
             );
           })}
