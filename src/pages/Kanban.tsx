@@ -5,8 +5,14 @@ import { ICard } from "../components/Card/Card";
 import { Column } from "../components/Column/Column";
 import { columnList, completeCards } from "../utils/mockData";
 
+interface IColumn {
+  title: string;
+  id: number;
+  list: ICard[];
+}
+
 export const Kanban = () => {
-  const [columnArray, setColumnArray] = useState<any>(columnList);
+  const [columnArray, setColumnArray] = useState<IColumn[]>(columnList);
   const [columnIndex, setColumnIndex] = useState(0);
   const [draggableItem, setDraggableItem] = useState<any>();
   const [startIndex, setStartIndex] = useState<number>(0);
@@ -16,7 +22,7 @@ export const Kanban = () => {
       if (draggableItem) {
         if (startIndex === columnIndex) return;
 
-        setColumnArray((prev: any) => {
+        setColumnArray((prev: IColumn[]) => {
           const copy = [...prev];
 
           const newArr = copy[startIndex]?.list?.filter((item: ICard) => {
@@ -41,23 +47,21 @@ export const Kanban = () => {
   };
   return (
     <KanbanStlye>
-      {columnArray.map(
-        (i: { title: string; id: number; list: ICard[] }, index: number) => {
-          return (
-            <Column
-              draggableItem={draggableItem}
-              key={i.id}
-              title={i.title}
-              list={i.list}
-              listIndex={index}
-              onDragOver={() => setColumnIndex(index)}
-              onDragStart={handleDrag}
-              onMouseDown={() => catchStartIndex(index)}
-              setDraggableItem={setDraggableItem}
-            />
-          );
-        }
-      )}
+      {columnArray.map((i: IColumn, index: number) => {
+        return (
+          <Column
+            draggableItem={draggableItem}
+            key={i.id}
+            title={i.title}
+            list={i.list}
+            listIndex={index}
+            onDragOver={() => setColumnIndex(index)}
+            onDragEnd={handleDrag}
+            onMouseDown={() => catchStartIndex(index)}
+            setDraggableItem={setDraggableItem}
+          />
+        );
+      })}
 
       <AddColumn />
       <Column title="Completed Tasks" list={completeCards} />

@@ -1,9 +1,13 @@
 import Avatar from "../assets/images/user.png";
+
+export type ProfileImgType = ReturnType<typeof Avatar>;
+
 export const todoCards = [
   {
     id: 1,
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     dates: "Jan 3.",
+    profileImgs:[]
   },
   {
     id: 2,
@@ -28,6 +32,7 @@ export const todoCards = [
     numOfComments: 7,
     numOfFilters: 2,
     dates: "May 8. - Sep 10.",
+
   },
   {
     id: 5,
@@ -37,6 +42,8 @@ export const todoCards = [
     numOfComments: 7,
     numOfFilters: 2,
     dates: "May 8. - Sep 10.",
+    profileImgs:[]
+
   },
   {
     id: 6,
@@ -46,6 +53,8 @@ export const todoCards = [
     numOfComments: 7,
     numOfFilters: 2,
     dates: "May 8. - Sep 10.",
+    profileImgs:[]
+
   },
   {
     id: 7,
@@ -55,6 +64,8 @@ export const todoCards = [
     numOfComments: 7,
     numOfFilters: 2,
     dates: "May 8. - Sep 10.",
+    profileImgs:[]
+
   },
 ];
 
@@ -67,6 +78,8 @@ export const inProgressCards = [
     numOfComments: 7,
     numOfFilters: 2,
     dates: "May 8. - Sep 10.",
+
+
   },
   {
     id: 9,
@@ -74,9 +87,12 @@ export const inProgressCards = [
     statusColors: ["#FFC236", "#64CD7C"],
     profileImgs: [Avatar],
 
+
     numOfComments: 7,
     numOfFilters: 2,
     dates: "May 8. - Sep 10.",
+
+
   },
   {
     id: 10,
@@ -93,6 +109,8 @@ export const reviewCards = [
     numOfComments: 7,
     numOfFilters: 2,
     dates: "May 8. - Sep 10.",
+    profileImgs:[]
+
   },
   {
     id: 12,
@@ -100,10 +118,14 @@ export const reviewCards = [
 
     dates: "May 8. - Sep 10.",
     highPriority: true,
+    profileImgs:[]
+
   },
   {
     id: 13,
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    profileImgs:[]
+
   },
 ];
 
@@ -133,6 +155,8 @@ export const completeCards = [
     id: 16,
     isCompleted: true,
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    profileImgs:[]
+
   },
 ];
 

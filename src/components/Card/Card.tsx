@@ -1,27 +1,26 @@
 import React from "react";
 import { Divider, Flex } from "../../styles/GlobalStyles";
+import { ProfileImgType } from "../../utils/mockData";
 import { CardStyled } from "./CardStyle";
 import { StatusBar } from "./StatusBar";
 
 export interface ICard {
   id?: number;
-  height?: string;
   text: string;
   numOfComments?: number;
   numOfFilters?: number | undefined;
   dates?: string;
   statusColors?: string[];
   isCompleted?: boolean;
-  profileImgs?: any;
+  profileImgs: ProfileImgType[];
   highPriority?: boolean;
-  onDragStart?: (item: any) => any;
-  onMouseDown?: (e: any) => void;
+  onDragEnd?: () => void;
+  onMouseDown?: () => void;
   setDraggableItem?: () => void;
   notDragged?: boolean;
 }
 
 export const Card = ({
-  height,
   text,
   numOfComments,
   numOfFilters,
@@ -31,14 +30,14 @@ export const Card = ({
   profileImgs,
   highPriority,
   onMouseDown,
-  onDragStart,
+  onDragEnd,
   notDragged,
 }: ICard) => {
   return (
     <CardStyled
       isCompleted={isCompleted}
       draggable
-      onDragEnd={onDragStart}
+      onDragEnd={onDragEnd}
       onMouseDown={onMouseDown}
       notDragged={!!notDragged}
     >
