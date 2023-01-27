@@ -3,6 +3,8 @@ import styled from 'styled-components'
 interface ICard {
     height?:string
   isCompleted?:boolean
+  onDragStart?: any
+
 
 }
 export const CardStyled = styled.div<ICard>`

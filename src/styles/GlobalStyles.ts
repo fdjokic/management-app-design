@@ -67,7 +67,6 @@ interface FlexProps {
     fontFamily?:string
     fontSize?:string
     color?:string
-
   }
 
 export const Flex = styled.div<FlexProps>`

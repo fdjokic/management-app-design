@@ -5,24 +5,43 @@ import { Card, ICard } from "../Card/Card";
 import { ColumnHeader } from "./ColumnHeader";
 import { ColumnWrapper } from "./ColumnStyled";
 
-export const Column = ({ title, list }: { title: string; list: ICard[] }) => {
+export const Column = ({
+  title,
+  list,
+  listIndex,
+  onDragOver,
+  onDragStart,
+  onDragEnd,
+  onMouseDown,
+}: {
+  title: string;
+  list: ICard[];
+  listIndex?: number;
+  onDragEnd?: () => void;
+  onDragOver?: () => void;
+  onDragStart?: (item: ICard) => void;
+  onMouseDown?: () => void;
+}) => {
   const isCompleted = title?.toLowerCase().includes("completed");
+
   return (
-    <div>
+    <div onDragOver={onDragOver} onClick={onMouseDown} onDrop={onDragEnd}>
       <ColumnHeader title={title} numOfTasks={list.length} />
       <ColumnWrapper>
         <Flex column gap="5px" padding="5px" overflow="none">
-          {list.map((item) => {
+          {list?.map((item: ICard) => {
             return (
               <Card
+                key={item?.id}
+                onDragStart={() => onDragStart?.(item)}
                 isCompleted={isCompleted}
-                statusColors={item.statusColors ? item.statusColors : []}
-                text={item.text}
-                dates={item.dates}
-                numOfComments={item.numOfComments}
-                numOfFilters={item.numOfFilters}
-                profileImgs={item.profileImgs}
-                highPriority={item.highPriority}
+                statusColors={item?.statusColors ? item?.statusColors : []}
+                text={item?.text}
+                dates={item?.dates}
+                numOfComments={item?.numOfComments}
+                numOfFilters={item?.numOfFilters}
+                profileImgs={item?.profileImgs}
+                highPriority={item?.highPriority}
               />
             );
           })}

@@ -5,15 +5,17 @@ import { StatusBar } from "./StatusBar";
 import Avatar from "../../assets/images/user.png";
 
 export interface ICard {
+  id?: number;
   height?: string;
   text: string;
   numOfComments?: number;
-  numOfFilters?: number;
+  numOfFilters?: number | undefined;
   dates?: string;
   statusColors?: string[];
   isCompleted?: boolean;
   profileImgs?: any;
   highPriority?: boolean;
+  onDragStart?: (item: any) => any;
 }
 
 export const Card = ({
@@ -26,9 +28,10 @@ export const Card = ({
   isCompleted,
   profileImgs,
   highPriority,
+  onDragStart,
 }: ICard) => {
   return (
-    <CardStyled isCompleted={isCompleted}>
+    <CardStyled isCompleted={isCompleted} draggable onDragEnd={onDragStart}>
       {highPriority && <Divider />}
       <p>{text}</p>
       {!statusColors || !numOfComments || !dates ? null : (
