@@ -18,6 +18,7 @@ export const CardStyled = styled.div<ICard>`
   background-color: ${(props) =>
     props.isCompleted ? props.theme.completedCard : props.theme.cardColor};
   padding: 12px 12px;
+  cursor: grab;
 
   section {
     height: 24px;
