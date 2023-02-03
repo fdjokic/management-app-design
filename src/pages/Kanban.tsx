@@ -1,9 +1,9 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { AddColumn } from "../components/Button/AddColumn";
-import { ICard } from "../components/Card/Card";
-import { Column } from "../components/Column/Column";
-import { columnList, completeCards } from "../utils/mockData";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { AddColumn } from '../components/Button/AddColumn';
+import { ICard } from '../components/Card/Card';
+import { Column } from '../components/Column/Column';
+import { columnList, completeCards } from '../utils/mockData';
 
 interface IColumn {
   title: string;
@@ -17,7 +17,14 @@ export const Kanban = () => {
   const [draggableItem, setDraggableItem] = useState<any>();
   const [startIndex, setStartIndex] = useState<number>(0);
 
-  function handleDrag() {
+  const handleDragStart = (e: React.DragEvent, card: string) => {
+    e.dataTransfer.setData('card', JSON.stringify(card));
+    console.log('first', card);
+    console.log(e.dataTransfer.getData('card'));
+  };
+
+  function handleDrag(e: React.DragEvent) {
+    const card: ICard = JSON.parse(e.dataTransfer.getData('card'));
     try {
       if (draggableItem) {
         if (startIndex === columnIndex) return;
@@ -26,11 +33,12 @@ export const Kanban = () => {
           const copy = [...prev];
 
           const newArr = copy[startIndex]?.list?.filter((item: ICard) => {
-            return item?.id !== draggableItem?.id;
+            return item?.id !== card?.id;
           });
           copy[startIndex].list = newArr;
 
-          copy[columnIndex]?.list?.unshift(draggableItem);
+          // copy[columnIndex]?.list?.unshift(card);
+          copy[columnIndex]?.list?.unshift(card);
 
           return copy;
         });
@@ -45,18 +53,24 @@ export const Kanban = () => {
   const catchStartIndex = (index: number) => {
     setStartIndex(index);
   };
+
+  const handleDragOver = (e: React.DragEvent, index: number) => {
+    e.preventDefault();
+    setColumnIndex(index);
+  };
   return (
     <KanbanStlye>
       {columnArray.map((i: IColumn, index: number) => {
         return (
           <Column
+            onDragStart={handleDragStart}
             draggableItem={draggableItem}
             key={i.id}
             title={i.title}
             list={i.list}
             listIndex={index}
-            onDragOver={() => setColumnIndex(index)}
-            onDragEnd={handleDrag}
+            onDragOver={(e: React.DragEvent) => handleDragOver(e, index)}
+            onDrop={handleDrag}
             onMouseDown={() => catchStartIndex(index)}
             setDraggableItem={setDraggableItem}
           />
@@ -64,7 +78,7 @@ export const Kanban = () => {
       })}
 
       <AddColumn />
-      <Column title="Completed Tasks" list={completeCards} />
+      <Column title='Completed Tasks' list={completeCards} />
     </KanbanStlye>
   );
 };

@@ -1,51 +1,54 @@
-import React from "react";
-import { Flex } from "../../styles/GlobalStyles";
-import { BottomColBtn } from "../Button/BottomColBtn";
-import { Card, ICard } from "../Card/Card";
-import { ColumnHeader } from "./ColumnHeader";
-import { ColumnWrapper } from "./ColumnStyled";
+import React from 'react';
+import { Flex } from '../../styles/GlobalStyles';
+import { BottomColBtn } from '../Button/BottomColBtn';
+import { Card, ICard } from '../Card/Card';
+import { ColumnHeader } from './ColumnHeader';
+import { ColumnWrapper } from './ColumnStyled';
 
 export const Column = ({
   title,
   list,
   onDragOver,
-  onDragEnd,
+  onDrop,
   onMouseDown,
   setDraggableItem,
   draggableItem,
+  onDragStart,
 }: {
   title: string;
   list: ICard[];
   listIndex?: number;
-  onDragEnd?: () => void;
-  onDragOver?: () => void;
+  onDrop?: (e: React.DragEvent) => void;
+  onDragOver?: (e: React.DragEvent) => void;
   onMouseDown?: () => void;
   setDraggableItem?: (item: ICard) => void;
   draggableItem?: ICard;
+  onDragStart?: (e: React.DragEvent, card: any) => void;
 }) => {
-  const isCompleted = title?.toLowerCase().includes("completed");
+  const isCompleted = title?.toLowerCase().includes('completed');
 
   return (
     <div onDragOver={onDragOver} onMouseDown={onMouseDown}>
       <ColumnHeader title={title} numOfTasks={list.length} />
       <ColumnWrapper>
-        <Flex column gap="5px" padding="5px" overflow="none">
-          {list?.map((item: ICard) => {
+        <Flex column gap='5px' padding='5px' overflow='none'>
+          {list?.map((card: ICard) => {
             return (
               <Card
-                notDragged={!!draggableItem && draggableItem.id !== item.id}
-                key={item?.id}
-                onDragEnd={onDragEnd}
+                onDragStart={(e: React.DragEvent) => onDragStart?.(e, card)}
+                notDragged={!!draggableItem && draggableItem.id !== card.id}
+                key={card?.id}
+                onDrop={(e: React.DragEvent) => onDrop?.(e)}
                 isCompleted={isCompleted}
-                statusColors={item?.statusColors ? item?.statusColors : []}
-                text={item?.text}
-                dates={item?.dates}
-                numOfComments={item?.numOfComments}
-                numOfFilters={item?.numOfFilters}
-                profileImgs={item?.profileImgs}
-                highPriority={item?.highPriority}
+                statusColors={card?.statusColors ? card?.statusColors : []}
+                text={card?.text}
+                dates={card?.dates}
+                numOfComments={card?.numOfComments}
+                numOfFilters={card?.numOfFilters}
+                profileImgs={card?.profileImgs}
+                highPriority={card?.highPriority}
                 onMouseDown={() => {
-                  setDraggableItem?.(item);
+                  setDraggableItem?.(card);
                 }}
               />
             );

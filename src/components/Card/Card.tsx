@@ -1,8 +1,8 @@
-import React from "react";
-import { Divider, Flex } from "../../styles/GlobalStyles";
-import { ProfileImgType } from "../../utils/mockData";
-import { CardStyled } from "./CardStyle";
-import { StatusBar } from "./StatusBar";
+import React from 'react';
+import { Divider, Flex } from '../../styles/GlobalStyles';
+import { ProfileImgType } from '../../utils/mockData';
+import { CardStyled } from './CardStyle';
+import { StatusBar } from './StatusBar';
 
 export interface ICard {
   id?: number;
@@ -14,10 +14,11 @@ export interface ICard {
   isCompleted?: boolean;
   profileImgs: ProfileImgType[];
   highPriority?: boolean;
-  onDragEnd?: () => void;
+  onDrop?: (e: React.DragEvent) => void;
   onMouseDown?: () => void;
   setDraggableItem?: () => void;
   notDragged?: boolean;
+  onDragStart?: (e: React.DragEvent) => void;
 }
 
 export const Card = ({
@@ -30,15 +31,17 @@ export const Card = ({
   profileImgs,
   highPriority,
   onMouseDown,
-  onDragEnd,
+  onDrop,
   notDragged,
+  onDragStart,
 }: ICard) => {
   return (
     <CardStyled
       isCompleted={isCompleted}
       draggable
-      onDragEnd={onDragEnd}
+      onDrop={onDrop}
       onMouseDown={onMouseDown}
+      onDragStart={onDragStart}
       notDragged={!!notDragged}
     >
       {highPriority && <Divider />}
@@ -54,16 +57,16 @@ export const Card = ({
         <section>
           {dates && <b>{dates}</b>}
           {profileImgs && (
-            <Flex relative width="100%">
+            <Flex relative width='100%'>
               {profileImgs?.map((i: string, index: number) => {
                 return (
                   <img
                     src={i}
-                    alt=""
+                    alt=''
                     style={{
-                      width: "24px",
-                      position: "absolute",
-                      right: "0",
+                      width: '24px',
+                      position: 'absolute',
+                      right: '0',
                       transform: `${
                         dates
                           ? `translate(${index * -55}%)`
