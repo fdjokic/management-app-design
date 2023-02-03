@@ -19,8 +19,6 @@ export const Kanban = () => {
 
   const handleDragStart = (e: React.DragEvent, card: string) => {
     e.dataTransfer.setData('card', JSON.stringify(card));
-    console.log('first', card);
-    console.log(e.dataTransfer.getData('card'));
   };
 
   function handleDrag(e: React.DragEvent) {

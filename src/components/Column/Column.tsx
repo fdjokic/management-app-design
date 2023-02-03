@@ -27,8 +27,18 @@ export const Column = ({
 }) => {
   const isCompleted = title?.toLowerCase().includes('completed');
 
+  const checkEmptyList = () => {
+    if (list.length === 0) {
+      return onDrop;
+    }
+  };
+
   return (
-    <div onDragOver={onDragOver} onMouseDown={onMouseDown}>
+    <div
+      onDragOver={onDragOver}
+      onMouseDown={onMouseDown}
+      onDrop={checkEmptyList()}
+    >
       <ColumnHeader title={title} numOfTasks={list.length} />
       <ColumnWrapper>
         <Flex column gap='5px' padding='5px' overflow='none'>
