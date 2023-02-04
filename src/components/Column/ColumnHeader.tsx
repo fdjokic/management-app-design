@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { OptionsIcon } from "../../assets/icons/optionsIcon";
+import React from 'react';
+import styled from 'styled-components';
+import { OptionsIcon } from '../../assets/icons/optionsIcon';
 
 export const ColumnHeader = ({
   title,
@@ -40,7 +40,7 @@ const HeaderStyle = styled.div`
   h1 {
     height: 19px;
     color: ${(props) => props.theme.headingColor};
-    font-family: "Helvetica Neue";
+    font-family: 'Helvetica Neue';
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0;
@@ -49,7 +49,7 @@ const HeaderStyle = styled.div`
   span {
     color: ${(props) => props.theme.secondaryText};
     opacity: 0.5;
-    font-family: "HelveticaNeue-Bold";
+    font-family: 'HelveticaNeue-Bold';
     font-size: 14px;
   }
 `;
