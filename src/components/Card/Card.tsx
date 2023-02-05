@@ -48,6 +48,7 @@ export const Card = ({
       <p>{text}</p>
       {!statusColors || !numOfComments || !dates ? null : (
         <StatusBar
+          data-testid='status-bar'
           colors={statusColors}
           comments={numOfComments}
           filters={numOfFilters}
