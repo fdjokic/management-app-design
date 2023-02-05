@@ -12,8 +12,8 @@ export const ColumnHeader = ({
   return (
     <HeaderStyle>
       <div>
-        <h1>{title}</h1>
-        <span>({numOfTasks})</span>
+        <h1 data-testid='title'>{title}</h1>
+        <span data-testid='numOfTasks'>({numOfTasks})</span>
       </div>
       <div>
         <OptionsIcon />

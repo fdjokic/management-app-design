@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { PlusIcon } from "../../assets/icons/plusIcon";
+import React from 'react';
+import styled from 'styled-components';
+import { PlusIcon } from '../../assets/icons/plusIcon';
 
 export const AddColumn = () => {
   return (
